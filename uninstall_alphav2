@@ -41,9 +41,9 @@ fi
 
 clear
 echo -e "${RED}####################################################################${NC}"
-echo -e "${RED}# ${YELLOW}           WELCOME TO HOKAGE LEGEND VPN UNINSTALLER             ${RED}#${NC}"
+echo -e "${RED}# ${YELLOW}           WELCOME TO GENZNET  VPN UNINSTALLER             ${RED}#${NC}"
 echo -e "${RED}# ${YELLOW} This script will attempt to remove components installed by the   ${RED}#${NC}"
-echo -e "${RED}# ${YELLOW}             Hokage Legend VPN installation script.             ${RED}#${NC}"
+echo -e "${RED}# ${YELLOW}             GENZNET  VPN installation script.             ${RED}#${NC}"
 echo -e "${RED}#                                                                  ${RED}#${NC}"
 echo -e "${RED}# ${WARN} IMPORTANT: BACK UP YOUR DATA BEFORE PROCEEDING!              ${RED}#${NC}"
 echo -e "${RED}# ${WARN} This script will remove packages, files, and configurations. ${RED}#${NC}"
@@ -336,9 +336,9 @@ fi
 # It's best to restore from a backup if one was made by the installer.
 # Otherwise, try to revert specific changes.
 SSHD_CONFIG="/etc/ssh/sshd_config"
-if [ -f "${SSHD_CONFIG}.bak_hokage_installer" ]; then # Assuming installer made a backup
-    print_ok "Restoring ${SSHD_CONFIG} from .bak_hokage_installer..."
-    mv "${SSHD_CONFIG}.bak_hokage_installer" "${SSHD_CONFIG}"
+if [ -f "${SSHD_CONFIG}.bak_GENZNET_installer" ]; then # Assuming installer made a backup
+    print_ok "Restoring ${SSHD_CONFIG} from .bak_GENZNET_installer..."
+    mv "${SSHD_CONFIG}.bak_GENZNET_installer" "${SSHD_CONFIG}"
 elif [ -f "$SSHD_CONFIG" ]; then
     print_ok "Attempting to revert changes in ${SSHD_CONFIG}..."
     # Create a backup before modifying
@@ -353,9 +353,9 @@ fi
 
 # Restore /etc/default/dropbear (remove banner)
 DROPBEAR_CONFIG="/etc/default/dropbear"
-if [ -f "${DROPBEAR_CONFIG}.bak_hokage_installer" ]; then
-    print_ok "Restoring ${DROPBEAR_CONFIG} from .bak_hokage_installer..."
-    mv "${DROPBEAR_CONFIG}.bak_hokage_installer" "${DROPBEAR_CONFIG}"
+if [ -f "${DROPBEAR_CONFIG}.bak_GENZNET_installer" ]; then
+    print_ok "Restoring ${DROPBEAR_CONFIG} from .bak_GENZNET_installer..."
+    mv "${DROPBEAR_CONFIG}.bak_GENZNET_installer" "${DROPBEAR_CONFIG}"
 elif [ -f "$DROPBEAR_CONFIG" ]; then
     print_ok "Attempting to revert changes in ${DROPBEAR_CONFIG}..."
     cp "$DROPBEAR_CONFIG" "${DROPBEAR_CONFIG}.bak_uninstaller_$(date +%F-%T)"
@@ -369,9 +369,9 @@ fi
 # This is critical. If the installer replaced it, a backup is essential.
 # The installer wget's a new one.
 PAM_COMMON_PASS="/etc/pam.d/common-password"
-if [ -f "${PAM_COMMON_PASS}.bak_hokage_installer" ]; then
-    print_ok "Restoring ${PAM_COMMON_PASS} from .bak_hokage_installer..."
-    mv "${PAM_COMMON_PASS}.bak_hokage_installer" "${PAM_COMMON_PASS}"
+if [ -f "${PAM_COMMON_PASS}.bak_GENZNET_installer" ]; then
+    print_ok "Restoring ${PAM_COMMON_PASS} from .bak_GENZNET_installer..."
+    mv "${PAM_COMMON_PASS}.bak_GENZNET_installer" "${PAM_COMMON_PASS}"
 elif [ -f "${PAM_COMMON_PASS}.dpkg-dist" ]; then # Debian systems often keep a .dpkg-dist
     print_ok "Restoring ${PAM_COMMON_PASS} from .dpkg-dist..."
     cp "${PAM_COMMON_PASS}.dpkg-dist" "${PAM_COMMON_PASS}"
@@ -423,9 +423,9 @@ fi
 
 # Restore /root/.profile
 # The installer replaces it. A default .profile might be in /etc/skel/.profile
-if [ -f /root/.profile.bak_hokage_installer ]; then
+if [ -f /root/.profile.bak_GENZNET_installer ]; then
     print_ok "Restoring /root/.profile from backup..."
-    mv /root/.profile.bak_hokage_installer /root/.profile
+    mv /root/.profile.bak_GENZNET_installer /root/.profile
 elif [ -f /etc/skel/.profile ]; then
     print_ok "Restoring /root/.profile from /etc/skel/.profile..."
     cp /etc/skel/.profile /root/.profile
@@ -504,7 +504,7 @@ print_ok "Uninstallation process finished."
 print_warn "A system reboot is recommended to ensure all changes are applied and services are fully stopped."
 print_warn "Please manually check for any remaining files or configurations if you encounter issues."
 echo -e "${YELLOW}----------------------------------------------------------${NC}"
-echo -e " SCRIPT BY HOKAGE LEGEND - UNINSTALLER "
+echo -e " SCRIPT BY GENZNET  - UNINSTALLER "
 echo -e "${YELLOW}----------------------------------------------------------${NC}"
 echo ""
 read -p "Reboot now? (y/N): " REBOOT_CHOICE
@@ -524,7 +524,7 @@ exit 0
 
 **Important Notes for the Uninstaller Script:**
 
-* **Backups:** The uninstaller attempts to make backups of some configuration files before modifying them (e.g., `/etc/rc.local.bak_uninstaller_YYYY-MM-DD-HH-MM-SS`). However, it relies on the installer having made backups with specific names (like `.bak_hokage_installer`) for critical files like `sshd_config` or `common-password`. If those don't exist, restoration is more difficult.
+* **Backups:** The uninstaller attempts to make backups of some configuration files before modifying them (e.g., `/etc/rc.local.bak_uninstaller_YYYY-MM-DD-HH-MM-SS`). However, it relies on the installer having made backups with specific names (like `.bak_GENZNET_installer`) for critical files like `sshd_config` or `common-password`. If those don't exist, restoration is more difficult.
 * **External Scripts (`bbr.sh`, `noobzvpns/install.sh`, etc.):** The uninstaller makes educated guesses about how to revert changes from these scripts (e.g., common BBR sysctl lines). A perfect reversal requires knowing exactly what those scripts did.
     * **`noobzvpns`**: I've assumed it might install to `/opt/noobzvpns` and create a service `noobzvpns.service`. You might need to adjust this.
     * **`wondershaper`**: Removed by deleting common file locations.
@@ -590,9 +590,9 @@ fi
 
 clear
 echo -e "${RED}####################################################################${NC}"
-echo -e "${RED}# ${YELLOW}           WELCOME TO HOKAGE LEGEND VPN UNINSTALLER             ${RED}#${NC}"
+echo -e "${RED}# ${YELLOW}           WELCOME TO GENZNET  VPN UNINSTALLER             ${RED}#${NC}"
 echo -e "${RED}# ${YELLOW} This script will attempt to remove components installed by the   ${RED}#${NC}"
-echo -e "${RED}# ${YELLOW}             Hokage Legend VPN installation script.             ${RED}#${NC}"
+echo -e "${RED}# ${YELLOW}             GENZNET  VPN installation script.             ${RED}#${NC}"
 echo -e "${RED}#                                                                  ${RED}#${NC}"
 echo -e "${RED}# ${WARN} IMPORTANT: BACK UP YOUR DATA BEFORE PROCEEDING!              ${RED}#${NC}"
 echo -e "${RED}# ${WARN} This script will remove packages, files, and configurations. ${RED}#${NC}"
@@ -882,7 +882,7 @@ print_uninstall "Reverting system configurations..."
 
 # Restore /etc/rc.local
 RC_LOCAL_FILE="/etc/rc.local"
-RC_LOCAL_BACKUP="${RC_LOCAL_FILE}.bak_hokage_installer" # Assuming installer created this
+RC_LOCAL_BACKUP="${RC_LOCAL_FILE}.bak_GENZNET_installer" # Assuming installer created this
 if [ -f "$RC_LOCAL_BACKUP" ]; then
     print_ok "Restoring $RC_LOCAL_FILE from $RC_LOCAL_BACKUP..."
     mv "$RC_LOCAL_BACKUP" "$RC_LOCAL_FILE"
@@ -945,7 +945,7 @@ fi
 
 # Restore /etc/ssh/sshd_config
 SSHD_CONFIG="/etc/ssh/sshd_config"
-SSHD_CONFIG_BACKUP="${SSHD_CONFIG}.bak_hokage_installer"
+SSHD_CONFIG_BACKUP="${SSHD_CONFIG}.bak_GENZNET_installer"
 if [ -f "$SSHD_CONFIG_BACKUP" ]; then
     print_ok "Restoring $SSHD_CONFIG from $SSHD_CONFIG_BACKUP..."
     mv "$SSHD_CONFIG_BACKUP" "$SSHD_CONFIG"
@@ -967,7 +967,7 @@ systemctl restart ssh || systemctl restart sshd || print_warn "Failed to restart
 
 # Restore /etc/default/dropbear
 DROPBEAR_CONFIG="/etc/default/dropbear"
-DROPBEAR_CONFIG_BACKUP="${DROPBEAR_CONFIG}.bak_hokage_installer"
+DROPBEAR_CONFIG_BACKUP="${DROPBEAR_CONFIG}.bak_GENZNET_installer"
 if [ -f "$DROPBEAR_CONFIG_BACKUP" ]; then
     print_ok "Restoring $DROPBEAR_CONFIG from $DROPBEAR_CONFIG_BACKUP..."
     mv "$DROPBEAR_CONFIG_BACKUP" "$DROPBEAR_CONFIG"
@@ -986,7 +986,7 @@ fi
 
 # Restore /etc/pam.d/common-password
 PAM_COMMON_PASS="/etc/pam.d/common-password"
-PAM_COMMON_PASS_BACKUP="${PAM_COMMON_PASS}.bak_hokage_installer"
+PAM_COMMON_PASS_BACKUP="${PAM_COMMON_PASS}.bak_GENZNET_installer"
 if [ -f "$PAM_COMMON_PASS_BACKUP" ]; then
     print_ok "Restoring $PAM_COMMON_PASS from $PAM_COMMON_PASS_BACKUP..."
     mv "$PAM_COMMON_PASS_BACKUP" "$PAM_COMMON_PASS"
@@ -999,7 +999,7 @@ fi
 
 # Restore /etc/nginx/nginx.conf
 NGINX_CONF="/etc/nginx/nginx.conf"
-NGINX_CONF_BACKUP="${NGINX_CONF}.bak_hokage_installer"
+NGINX_CONF_BACKUP="${NGINX_CONF}.bak_GENZNET_installer"
 if [ -f "$NGINX_CONF_BACKUP" ]; then
     print_ok "Restoring $NGINX_CONF from $NGINX_CONF_BACKUP..."
     mv "$NGINX_CONF_BACKUP" "$NGINX_CONF"
@@ -1055,7 +1055,7 @@ fi
 
 # Restore /root/.profile
 PROFILE_FILE="/root/.profile"
-PROFILE_BACKUP="${PROFILE_FILE}.bak_hokage_installer"
+PROFILE_BACKUP="${PROFILE_FILE}.bak_GENZNET_installer"
 if [ -f "$PROFILE_BACKUP" ]; then
     print_ok "Restoring $PROFILE_FILE from $PROFILE_BACKUP..."
     mv "$PROFILE_BACKUP" "$PROFILE_FILE"
@@ -1169,7 +1169,7 @@ print_ok "Uninstallation process finished."
 print_warn "A system reboot is STRONGLY recommended to ensure all changes are applied and services are fully stopped/cleaned."
 print_warn "Please manually check for any remaining files or configurations if you encounter issues."
 echo -e "${YELLOW}----------------------------------------------------------${NC}"
-echo -e " SCRIPT BY HOKAGE LEGEND - UNINSTALLER "
+echo -e " SCRIPT BY GENZNET  - UNINSTALLER "
 echo -e "${YELLOW}----------------------------------------------------------${NC}"
 echo ""
 read -p "Reboot now? (y/N): " REBOOT_CHOICE
@@ -1183,8 +1183,8 @@ exit 0
 
 **Before Running:**
 
-1.  **Save:** Save the script to a file (e.g., `uninstaller_hokage.sh`).
-2.  **Executable:** Make it executable: `chmod +x uninstaller_hokage.sh`.
+1.  **Save:** Save the script to a file (e.g., `uninstaller_GENZNET.sh`).
+2.  **Executable:** Make it executable: `chmod +x uninstaller_GENZNET.sh`.
 3.  **Review:** Please read through the script. I've added many comments and tried to be safe, but you know your system and the installer best. Pay close attention to sections that restore critical configuration files like `/etc/pam.d/common-password`, `/etc/ssh/sshd_config`, and `/etc/nginx/nginx.conf`.
 4.  **Backup:** I cannot stress this enough: **BACK UP YOUR SYSTEM OR ANY IMPORTANT DATA** before running this.
 
@@ -1195,7 +1195,7 @@ exit 0
 * **PPA Removal:** Checks for `add-apt-repository` command before attempting to use it.
 * **File/Directory Lists:** More organized and tries to remove items based on where the installer placed them.
 * **Configuration Restoration:**
-    * Attempts to restore critical files like `/etc/rc.local`, `/etc/ssh/sshd_config`, `/etc/default/dropbear`, `/etc/pam.d/common-password`, `/etc/nginx/nginx.conf`, and `/root/.profile` from backups if the installer created them (e.g., `*.bak_hokage_installer`) or from system defaults (e.g., `.dpkg-dist`, `/etc/skel/.profile`).
+    * Attempts to restore critical files like `/etc/rc.local`, `/etc/ssh/sshd_config`, `/etc/default/dropbear`, `/etc/pam.d/common-password`, `/etc/nginx/nginx.conf`, and `/root/.profile` from backups if the installer created them (e.g., `*.bak_GENZNET_installer`) or from system defaults (e.g., `.dpkg-dist`, `/etc/skel/.profile`).
     * If no backup is found, it attempts to revert specific known changes.
 * **Swap and IPv6:** More careful handling of swap file removal and IPv6 re-enabling.
 * **BBR Reversion:** Attempts to remove common BBR sysctl entries.
