@@ -31,11 +31,11 @@ date_list=$(date +"%Y-%m-%d" -d "$data_server")
 
   # // Banner
 echo -e "${YELLOW}----------------------------------------------------------${NC}"
-echo -e " WELCOME TO HOKAGE LEGEND STORE VPN ${YELLOW}(${NC}${green}Stable Edition${NC}${YELLOW})${NC}"
+echo -e " WELCOME TO GENZNET  STORE VPN ${YELLOW}(${NC}${green}Stable Edition${NC}${YELLOW})${NC}"
 echo -e " PROSES PENGECEKAN IP ADDRESS ANDA !!"
 echo -e "${purple}----------------------------------------------------------${NC}"
-echo -e " ›AUTHOR : ${green}HOKAGE STORE® ${NC}${YELLOW}(${NC}${green}V 3.5${NC}${YELLOW})${NC}"
-echo -e " ›TEAM 🅥🅝: HOKAGE STORE ${YELLOW}(${NC} 2025 ${YELLOW})${NC}"
+echo -e " â€ºAUTHOR : ${green}GENZNET STOREÂ® ${NC}${YELLOW}(${NC}${green}V 3.5${NC}${YELLOW})${NC}"
+echo -e " â€ºTEAM ðŸ…¥ðŸ…: GENZNET STORE ${YELLOW}(${NC} 2025 ${YELLOW})${NC}"
 echo -e "${YELLOW}----------------------------------------------------------${NC}"
 echo ""
 sleep 2
@@ -88,7 +88,7 @@ gem install lolcat
 apt install wondershaper -y
 clear
 # REPO    
-    REPO="https://raw.githubusercontent.com/hokagelegend9999/alpha.v2/refs/heads/main/"
+    REPO="https://raw.githubusercontent.com/genznet/alpha.v2/refs/heads/main/"
 
 ####
 start=$(date +%s)
@@ -275,7 +275,7 @@ curl "ipinfo.io/city?token=7a814b6263b02c" > /root/.city
 MYIP=$(curl -sS ipv4.icanhazip.com)
 echo -e "\e[32mloading...\e[0m" 
 clear
-izinsc="https://raw.githubusercontent.com/hokagelegend9999/ijin/refs/heads/main/alpha"
+izinsc="https://raw.githubusercontent.com/genznet/ijin/refs/heads/main/alpha"
 # USERNAME
 rm -f /usr/bin/user
 username=$(curl $izinsc | grep $MYIP | awk '{print $2}')
@@ -321,9 +321,9 @@ TIMEZONE=$(printf '%(%H:%M:%S)T')
 Exp-Sc=$(curl $izinsc | grep $MYIP | awk '{print $4}')
 User=$(cat /usr/bin/user)
     TEXT="
-<code>────────────────────</code>
-<b>⚡𝗡𝗢𝗧𝗜𝗙 𝗜𝗡𝗦𝗧𝗔𝗟𝗟 𝗦𝗖𝗥𝗜𝗣𝗧⚡</b>
-<code>────────────────────</code>
+<code>â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€</code>
+<b>âš¡ð—¡ð—¢ð—§ð—œð—™ ð—œð—¡ð—¦ð—§ð—”ð—Ÿð—Ÿ ð—¦ð—–ð—¥ð—œð—£ð—§âš¡</b>
+<code>â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€</code>
 <code>USER NAME     :</code><code>$User</code>
 <code>ISP           :</code><code>$ISP</code>
 <code>CITY          :</code><code>$CITY</code>
@@ -331,11 +331,11 @@ User=$(cat /usr/bin/user)
 <code>DATE          :</code><code>$DATE</code>
 <code>Time          :</code><code>$TIMEZONE</code>
 <code>Expired       :</code><code>$Exp-Sc</code>
-<code>─────────────────────────────</code>
-<b> HOKAGE CENTER VPN STORE SCRIPT  </b>
-<code>─────────────────────────────</code>
+<code>â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€</code>
+<b> GENZNET CENTER VPN STORE SCRIPT  </b>
+<code>â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€</code>
 <i>Automatic Notifications From Github</i>
-"'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ","url":"t.me/hokagelegend1"}]]}' 
+"'&reply_markup={"inline_keyboard":[[{"text":"á´Ê€á´…á´‡Ê€","url":"t.me/GENZNET1"}]]}' 
 
     curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 }
@@ -434,7 +434,7 @@ bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release
     wget -O /etc/nginx/conf.d/xray.conf "${REPO}config/xray.conf" >/dev/null 2>&1
     sed -i "s/xxx/${domain}/g" /etc/haproxy/haproxy.cfg
     sed -i "s/xxx/${domain}/g" /etc/nginx/conf.d/xray.conf
-    sudo curl -fsSL https://raw.githubusercontent.com/hokagelegend9999/alpha.v2/refs/heads/main/config/nginx.conf -o /etc/nginx/nginx.conf
+    sudo curl -fsSL https://raw.githubusercontent.com/genznet/alpha.v2/refs/heads/main/config/nginx.conf -o /etc/nginx/nginx.conf
     
 cat /etc/xray/xray.crt /etc/xray/xray.key | tee /etc/haproxy/hap.pem
 
@@ -542,7 +542,7 @@ print_success "Password SSH"
 function udp_mini(){
 clear
 print_install "Memasang Service Limit IP & Quota"
-wget -q https://raw.githubusercontent.com/hokagelegend9999/alpha.v2/refs/heads/main/config/fv-tunnel && chmod +x fv-tunnel && ./fv-tunnel
+wget -q https://raw.githubusercontent.com/genznet/alpha.v2/refs/heads/main/config/fv-tunnel && chmod +x fv-tunnel && ./fv-tunnel
 
 # // Installing UDP Mini
 mkdir -p /usr/local/kyt/
@@ -594,7 +594,7 @@ clear
 print_install "Menginstall Dropbear"
 # // Installing Dropbear
 apt-get install dropbear -y > /dev/null 2>&1
-wget -q -O /etc/default/dropbear https://raw.githubusercontent.com/hokagelegend9999/alpha.v2/refs/heads/main/config/dropbear.conf
+wget -q -O /etc/default/dropbear https://raw.githubusercontent.com/genznet/alpha.v2/refs/heads/main/config/dropbear.conf
 chmod +x /etc/default/dropbear
 /etc/init.d/dropbear restart
 /etc/init.d/dropbear status
@@ -604,7 +604,7 @@ print_success "Dropbear"
 function ins_udpSSH(){
 clear
 print_install "Menginstall Udp-custom"
-wget -q https://raw.githubusercontent.com/hokagelegend9999/alpha.v2/refs/heads/main/udp-custom/udp-custom.sh
+wget -q https://raw.githubusercontent.com/genznet/alpha.v2/refs/heads/main/udp-custom/udp-custom.sh
 chmod +x udp-custom.sh 
 bash udp-custom.sh
 rm -fr udp-custom.sh
@@ -638,7 +638,7 @@ function ins_openvpn(){
 clear
 print_install "Menginstall OpenVPN"
 #OpenVPN
-wget https://raw.githubusercontent.com/hokagelegend9999/alpha.v2/refs/heads/main/config/openvpn  chmod +x openvpn && ./openvpn
+wget https://raw.githubusercontent.com/genznet/alpha.v2/refs/heads/main/config/openvpn  chmod +x openvpn && ./openvpn
 /etc/init.d/openvpn restart
 print_success "OpenVPN"
 }
@@ -727,7 +727,7 @@ echo "Banner /etc/kyt.txt" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/kyt.txt"@g' /etc/default/dropbear
 
 # Ganti Banner
-wget -O /etc/kyt.txt https://raw.githubusercontent.com/hokagelegend9999/alpha.v2/refs/heads/main/files/issue.net
+wget -O /etc/kyt.txt https://raw.githubusercontent.com/genznet/alpha.v2/refs/heads/main/files/issue.net
 print_success "Fail2ban"
 }
 
@@ -1021,11 +1021,11 @@ echo ""
 echo ""
 echo "------------------------------------------------------------"
 echo ""
-echo "===============-[ SCRIPT BY HOKAGE LEGEND ]-==============="
+echo "===============-[ SCRIPT BY GENZNET  ]-==============="
 echo -e ""
 echo ""
 echo "" | tee -a log-install.txt
-echo "Semuanya Berjalan Ok...Terimakasih Telah menggunakan Script Hokage Legend!!"
+echo "Semuanya Berjalan Ok...Terimakasih Telah menggunakan Script GENZNET !!"
 sleep 1
 echo -ne "[ ${yell}COMPLETED${NC} ] PENGINSTALAN SCRIPT SELESAI? "
 reboot
