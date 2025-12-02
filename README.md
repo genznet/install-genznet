@@ -6,12 +6,12 @@ Tampilan utama dari aplikasi ini dirancang agar mudah digunakan dan responsif, m
 ### INSTALL SCRIPT 
 
 ```
-apt install -y && apt update -y && apt upgrade -y && wget -q https://raw.githubusercontent.com/genznet/install/refs/heads/main/alphav2 && chmod +x alphav2 && ./alphav2
+apt install -y && apt update -y && apt upgrade -y && wget -q https://raw.githubusercontent.com/genznet/install-genznet/refs/heads/main/alphav2 && chmod +x alphav2 && ./alphav2
 ```
 
 ## UPDATE SCRIPT
 ```
-wget -q https://github.com/genznet/install/raw/refs/heads/main/update_alphav2 && chmod +x update_alphav2 && ./update_alphav2
+wget -q https://github.com/genznet/install-genznet/raw/refs/heads/main/update_alphav2 && chmod +x update_alphav2 && ./update_alphav2
 ```
 
 ### SUPPORT OS LINUX
