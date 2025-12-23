@@ -30,14 +30,14 @@ fun_bar() {
     tput cnorm
 }
 res1() {
-    wget https://github.com/hokagelegend9999/force/raw/refs/heads/main/limit/menu.zip
+    wget https://github.com/genznet/force/raw/refs/heads/main/limit/menu.zip
     unzip menu.zip
     chmod +x menu/*
     mv menu/* /usr/local/sbin
     rm -rf menu
     rm -rf menu.zip
     rm -rf update.sh
-    wget https://github.com/hokagelegend9999/force/raw/refs/heads/main/limit/menu
+    wget https://github.com/genznet/force/raw/refs/heads/main/limit/menu
     chmod +x menu
     mv menu /usr/local/sbin
 }
