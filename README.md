@@ -63,11 +63,6 @@ wget https://raw.githubusercontent.com/genznet/alpha.v2/refs/heads/main/vpn_upda
 
 
 
-## SPESIAL ALL OS UBUNTU - DEBIAN 
-
--  lxc exec legacy-script-env -- bash 
-
-
 ===========================================================================================================================================
 
 
@@ -97,10 +92,4 @@ apt-get update && apt-get upgrade -y && apt dist-upgrade -y && update-grub
 cd root
 rm update.sh
 wget https://github.com/genznet/genomz/raw/refs/heads/main/menu/update.sh && chmod +x update.sh && ./update.sh
-```
-
-# INSTALL SCRIPT FORCE
-
-```
-sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt install -y bzip2 gzip coreutils screen curl unzip && wget https://github.com/genznet/install/raw/refs/heads/main/force && chmod +x force && sed -i -e 's/\r$//' force && screen -S setup ./force
 ```
