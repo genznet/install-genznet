@@ -464,6 +464,43 @@ res14() {
     # (opsional) buat symlink biar bisa dipanggil juga pakai nama lain
     # ln -sf /usr/bin/menu-wc /usr/bin/wildcard-cf
 }
+res15() {
+    echo -e "${GREEN}    Memulai instalasi ZIVPN...${NC}"
+
+    # Sumber script ZiVPN (RAW)
+    ZIVPN_RAW1="https://raw.githubusercontent.com/genznet/install/main/zivpn"
+    ZIVPN_RAW2="https://github.com/genznet/install/raw/main/zivpn"
+
+    # Lokasi pemasangan script
+    install_path="/usr/local/sbin/zivpn-install"
+
+    mkdir -p /etc/zivpn
+
+    # Download dengan fallback URL
+    if ! wget -q -O "$install_path" "$ZIVPN_RAW1"; then
+        wget -q -O "$install_path" "$ZIVPN_RAW2" || {
+            echo -e "${red}❌ Gagal download script ZiVPN dari GitHub${NC}"
+            echo -e "${yell}Cek apakah file 'zivpn' di repo memang 1 file (bukan folder) dan public.${NC}"
+            read -n 1 -s -r -p "Tekan tombol apa saja..."
+            return 1
+        }
+    fi
+
+    chmod +x "$install_path"
+
+    # Jalankan installer ZiVPN (kalau script Anda memang installer langsung)
+    # Jika script "zivpn" Anda adalah menu/manager, baris ini bisa Anda nonaktifkan.
+    bash "$install_path"
+
+    # (Opsional) buat wrapper command "zivpn" biar gampang dipanggil dari menu
+    cat >/usr/local/sbin/zivpn <<'EOF'
+#!/bin/bash
+exec /usr/local/sbin/zivpn-install "$@"
+EOF
+    chmod +x /usr/local/sbin/zivpn
+
+    clear
+}
 
 # --- Proses Instalasi GENZNET AUTOSCRIPT ---
 function GENZNETINSTALL(){
@@ -527,6 +564,11 @@ function GENZNETINSTALL(){
     echo -e "${BIBlue}╰══════════════════════════════════════════╯${NC}"
     res14
 }
+    echo -e "${BIBlue}╭══════════════════════════════════════════╮${NC}"
+    echo -e "${BIBlue}│ ${BGCOLOR}        INSTALL ZIVPN MODULE          ${NC}${BIBlue} │${NC}"
+    echo -e "${BIBlue}╰══════════════════════════════════════════╯${NC}"
+    res15
+
 GENZNETINSTALL # Memanggil fungsi SKT4100
 
 # --- Konfigurasi Post-Instalasi ---
